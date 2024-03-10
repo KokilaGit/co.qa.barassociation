@@ -9,7 +9,7 @@ import com.ba.page.BALoginPage;
 public class BALoginTestCases extends BALoginPage {
 
 	@Test
-	public void testCase1() {
+	public void testLogin() {
 		BALoginPage login = new BALoginPage();
 		login.UserId("itodadmin19@intellinx.com");
 		login.UserPwd("itoddev96");
@@ -19,6 +19,13 @@ public class BALoginTestCases extends BALoginPage {
 		Assert.assertTrue(title.contains(" Menu"));
 		login.quitDriver();
 
+	}
+	
+	@Test
+	public void testIsForgotPwdPresent() {
+		BALoginPage login = new BALoginPage();
+		boolean flag = login.forgotLinkTxt();
+		Assert.assertTrue(flag);
 	}
 
 }
